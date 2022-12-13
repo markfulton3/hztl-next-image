@@ -6,7 +6,7 @@ const myLoader = ({ src }) => {
   };
 
 const ImageWrapper = (props) => {
-  const { source, square, video, portrait, picture, hero, alignment, position } = props;
+  const { source, ratio, alignment, position } = props;
 
   const src = source || "Car"
 
@@ -20,6 +20,8 @@ const ImageWrapper = (props) => {
     leftBottom: `object-cover object-left-bottom`,
     rightBottom: `object-cover object-right-bottom`,
   }
+  
+  const classWrap = `aspect-${ratio} overflow-hidden rounded-lg bg-gray-200`
 
   let classStyle = 'object-cover';
   if (alignment != null)
@@ -29,74 +31,18 @@ const ImageWrapper = (props) => {
 
   console.log(`Alignment is ${classStyle}`)
  
-  if (video)
-  {
-    return (
-        <div className="aspect-video overflow-hidden rounded-lg bg-gray-200" style={{position: 'relative'}}>
-            <Image 
-                loader={myLoader} 
-                src={src} 
-                alt={src} 
-                fill={true}
-                className={classStyle}
-                priority={true}
-            />
-        </div>
-          
-      );
-  } else if (square) {
-    return (
-        <div className="aspect-square overflow-hidden rounded-lg bg-gray-200" style={{position: 'relative'}} >
-            <Image 
-                loader={myLoader} 
-                src={src} 
-                alt={src} 
-                fill
-                className={classStyle}
-            />
-        </div>
-          
-      );
-  } else if (portrait) {
-    return (
-        <div className="aspect-portrait overflow-hidden rounded-lg bg-gray-200" style={{position: 'relative'}} >
-            <Image 
-                loader={myLoader} 
-                src={src} 
-                alt={src} 
-                fill
-                className={classStyle}
-            />
-        </div>
-          
-      );
-  } else if (hero) {
-    return (
-        <div className="aspect-hero overflow-hidden rounded-lg bg-gray-200" style={{position: 'relative'}} >
-            <Image 
-                loader={myLoader} 
-                src={src} 
-                alt={src} 
-                fill
-                className={classStyle}
-            />
-        </div>
-          
-      );
-  } else {
-    return (
-        <div className="aspect-picture overflow-hidden rounded-lg bg-gray-200" style={{position: 'relative'}} >
-            <Image 
-                loader={myLoader} 
-                src={src} 
-                alt={src} 
-                fill
-                className={classStyle}
-            />
-        </div>
-          
-      );
-  }
+  return (
+    <div className={classWrap} style={{position: 'relative'}}>
+        <Image 
+            loader={myLoader} 
+            src={src} 
+            alt={src} 
+            fill={true}
+            className={classStyle}
+            priority={true}
+        />
+    </div>
+  );
   
   
 };

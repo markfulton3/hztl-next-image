@@ -69,7 +69,7 @@ export default function Home() {
             </div>  
             <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-1 lg:gap-x-8 lg:px-8">
               <div className="lg:grid lg:grid-cols-1 lg:gap-y-8">
-                <ImageWrapper source={searchString} hero alignment={alignment}/>
+                <ImageWrapper source={searchString} ratio="hero" alignment={alignment}/>
               </div>
             </div>
             <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-4 lg:gap-x-8 lg:px-8">
@@ -88,16 +88,16 @@ export default function Home() {
             </div>
             <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-4 lg:gap-x-8 lg:px-8">
               <div className="lg:grid lg:grid-cols-1 lg:gap-y-8">
-                  <ImageWrapper source={searchString} video alignment={alignment}/>
+                  <ImageWrapper source={searchString} ratio="video" alignment={alignment}/>
               </div>
               <div className="lg:grid lg:grid-cols-1 lg:gap-y-8">
-                  <ImageWrapper source={searchString} picture alignment={alignment}/>
+                  <ImageWrapper source={searchString} ratio="picture" alignment={alignment}/>
               </div>
               <div className="lg:grid lg:grid-cols-1 lg:gap-y-8">
-                  <ImageWrapper source={searchString} square alignment={alignment}/>
+                  <ImageWrapper source={searchString} ratio="square" alignment={alignment}/>
               </div>
               <div className="lg:grid lg:grid-cols-1 lg:gap-y-8">
-                  <ImageWrapper source={searchString} portrait alignment={alignment}/>
+                  <ImageWrapper source={searchString} ratio="portrait" alignment={alignment}/>
               </div>
             </div>
           </div>
